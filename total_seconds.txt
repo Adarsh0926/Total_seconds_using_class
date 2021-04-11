@@ -1,0 +1,37 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class Time
+{
+private:
+    int h, m, s, total;
+public:
+    void get()
+    {
+        cout<<"Hours? ";
+        cin>>h;
+        cout<<"Minutes? ";
+        cin>>m;
+        cout<<"Seconds? ";
+        cin>>s;
+    }
+    void display()
+    {
+        cout<<"The time is = "<<setw(2)<<setfill('0')<<h<<":"<<setw(2)<<setfill('0')<<m<<":"<<setw(2)<<setfill('0')<<s<<endl;
+    }
+    void total_seconds()
+    {
+        h = h * 60 * 60;
+        m = m * 60;
+        total = h+m+s;
+        cout<<"Time in total seconds: "<<total;
+    }
+};
+
+int main()
+{
+    Time ob;
+    ob.get();
+    ob.display();
+    ob.total_seconds();
+}
